@@ -232,7 +232,11 @@ layout: section
 <br>
 
 ```mermaid {scale: 0.6}
-flowchart TD
+flowchart LR
+    subgraph LEFT[" "]
+        Dev
+    end
+
     subgraph BRAIN["Documentation Hub"]
         V[Vision]
         A[Architecture]
@@ -240,10 +244,17 @@ flowchart TD
         G[Guidelines]
     end
 
-    PM --> |Updates| BRAIN
-    BRAIN --> |Reads| DEV
-    DEV --> |Updates| BRAIN
-    BRAIN --> |Reads| PM
+    subgraph RIGHT[" "]
+        PM
+    end
+
+    LEFT --> |Updates| BRAIN
+    BRAIN --> |Reads| RIGHT
+    RIGHT --> |Updates| BRAIN
+    BRAIN --> |Reads| LEFT
+
+    style LEFT fill:none,stroke:none
+    style RIGHT fill:none,stroke:none
 ```
 
 <br>
@@ -286,34 +297,7 @@ What you need at MVP stage:
 
 <br>
 
-```mermaid {scale: 0.7}
-flowchart LR
-    subgraph D1["Discover"]
-        A1[Research]
-        A2[Explore]
-    end
-    subgraph D2["Define"]
-        B1[Synthesize]
-        B2[Focus]
-    end
-    subgraph D3["Develop"]
-        C1[Ideate]
-        C2[Prototype]
-    end
-    subgraph D4["Deliver"]
-        E1[Test]
-        E2[Implement]
-    end
-
-    D1 --> D2
-    D2 --> D3
-    D3 --> D4
-
-    style D1 fill:#e6f3ff
-    style D2 fill:#cce6ff
-    style D3 fill:#e6f3ff
-    style D4 fill:#cce6ff
-```
+<img src="/double-diamond.png" style="width: 80%; display: block; margin: 0 auto">
 
 <br>
 
@@ -325,11 +309,13 @@ flowchart LR
 
 <br>
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.5}
 flowchart LR
-    subgraph PM["PM (Human + AI)"]
-        P1[Think]
-        P2[Validate]
+    
+    subgraph DEV["Dev (Human + AI)"]
+        E1[Read]
+        E2[Implement]
+        E3[Update]
     end
 
     subgraph DOCS["Documentation"]
@@ -338,14 +324,13 @@ flowchart LR
         D3[Features]
     end
 
-    subgraph DEV["Dev (Human + AI)"]
-        E1[Read]
-        E2[Implement]
-        E3[Update]
+    subgraph PM["PM (Human + AI)"]
+        P1[Think]
+        P2[Validate]
     end
 
     PM -->|writes PRD| DOCS
-    DOCS -->|reads docs| DEV
+    DOCS -->|reads PRD| DEV
     DEV -->|updates docs| DOCS
     DOCS -->|reads updates| PM
 ```
@@ -484,8 +469,6 @@ layout: section
 ---
 
 # Demo Introduction
-
-<br>
 
 "Let me show you this in action"
 
