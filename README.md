@@ -15,7 +15,9 @@ Custom Claude Code skills are available in the `skills/` directory:
 
 ## Slides
 
-The presentation is built with [Slidev](https://sli.dev/).
+The presentation is built with [Slidev](https://sli.dev/). The Markdown version is available in [this file](slides.md).
+
+For better reading, you can display the slides by following this process:
 
 ```bash
 # Install dependencies
