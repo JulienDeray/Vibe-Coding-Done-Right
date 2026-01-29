@@ -19,6 +19,8 @@ Sprint Accelerator / FinTech House Lisbon
 
 **Julien Deray** - Engineering Manager
 
+**Claude Code** - Presenter assistant
+
 ---
 
 # Icebreaker
@@ -494,6 +496,20 @@ layout: section
 7. Update docs with what was built
 
 </v-click>
+
+<!--
+- show vision
+- show doc
+- show backlog
+- show app
+- PM makes spec
+- show skill in the meantime
+- Dev makes code
+- show skill
+- make browser test
+- AI wrap up
+- debrief with crowd
+-->
 
 ---
 
